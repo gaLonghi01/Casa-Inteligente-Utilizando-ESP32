@@ -21,7 +21,7 @@ Isso roda a página web
 
 ## Pré-requisitos e Dependências
 
-Antes de rodar a aplicação, instale os pacotes necessários no terminal do sistema operacional:
+Antes de rodar a aplicação, instale os pacotes necessários no terminal do projeto:
 
 ```bash
 pip install flask pyserial mpremote
