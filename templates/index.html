@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Casa IoT</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background: #222; color: #fff; margin-top: 20px; }
+        .container { max-width: 600px; margin: auto; padding: 20px; }
+        button, select { padding: 12px 20px; margin: 8px; border-radius: 6px; border: none; font-weight: bold; font-size: 16px; cursor: pointer; }
+        .on { background: #4CAF50; color: #fff; }
+        .off { background: #555; color: #fff; }
+        .al { background: #f44336; color: #fff; }
+        .st { color: #ffeb3b; font-weight: bold; padding: 10px; background: #333; border-radius: 8px; margin: 10px 0;}
+        hr { border-color: #444; width: 80%; max-width: 400px; margin: 20px auto; }
+        select { background: #fff; color: #000; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Painel ESP32 - Casa Inteligente</h2>
+        
+        <div style="background: #333; padding: 15px; border-radius: 10px; margin-bottom: 20px;">
+            <select id="porta">
+                {% for p in portas %}
+                <option value="{{ p.device }}" {% if p.device == porta_atual %}selected{% endif %}>{{ p.description }}</option>
+                {% endfor %}
+            </select>
+            <button class="on" onclick="conectar()">Conectar USB</button>
+        </div>
+
+        <div class="st" id="status">{{ status }}</div>
+        <hr>
+
+        <button class="on" onclick="cmd('LUZ_ON')">Luz ON</button> 
+        <button class="off" onclick="cmd('LUZ_OFF')">Luz OFF</button><br>
+        
+        <button class="on" onclick="cmd('EXAUST_ON')">Exaustor ON</button> 
+        <button class="off" onclick="cmd('EXAUST_OFF')">Exaustor OFF</button><br>
+        
+        <button class="on" onclick="cmd('JANELA_ON')">Abrir Janela</button> 
+        <button class="off" onclick="cmd('JANELA_OFF')">Fechar Janela</button><br><br>
+        
+        <button class="al" onclick="cmd('ALARME_OFF')">Silenciar Alarme</button><br><br>
+
+        <button class="on" style="background:#2196F3;" onclick="cmd('STATUS')">Atualizar Status</button>
+    </div>
+
+    <script>
+        async function conectar() {
+            const porta = document.getElementById('porta').value;
+            const res = await fetch('/connect', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({porta})
+            });
+            const data = await res.json();
+            document.getElementById('status').innerText = data.status;
+        }
+
+        async function cmd(comando) {
+            const res = await fetch('/cmd', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({cmd: comando})
+            });
+            const data = await res.json();
+            document.getElementById('status').innerText = data.status;
+        }
+    </script>
+</body>
+</html>
