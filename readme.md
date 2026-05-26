@@ -6,13 +6,16 @@ Este projeto consiste em um sistema completo de IoT para controle e monitorament
 
 Após iniciar a simulação wokwi por meio do diagram.json, espere um ">>>" aparecer no terminal, e abra um novo terminal powershell na pasta onde o projeto está. Depois disso cole esse comando no terminal powershell e mande:
 
+```bash
 python -m mpremote connect port:rfc2217://localhost:4000 fs cp main.py :main.py + fs cp ssd1306.py :ssd1306.py + fs cp umail.py :umail.py + reset
-
+```
 Esse comando manda a main para o ESP32
 
 Assim que o terminal ficar livre para digitar, cole isso no terminal powershell e mande:
 
+```bash
 python app.py
+```
 
 Isso roda a página web
 
