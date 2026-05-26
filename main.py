@@ -279,7 +279,7 @@ pir_disparado = False
 INTERVALO_DHT = 2000     
 INTERVALO_OLED = 1000    
 INTERVALO_MQTT = 1500    
-INTERVALO_SHEETS = 10000  
+INTERVALO_SHEETS = 300000  
 
 print("Sistema Casa Inteligente Iniciado!")
 
