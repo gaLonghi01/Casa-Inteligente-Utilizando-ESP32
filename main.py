@@ -41,7 +41,7 @@ LIMIAR_TEMP_ALTA = 45.0
 LIMIAR_TEMP_REFRIG = 30.0
 LIMIAR_UMID_BAIXA = 20.0
 LUZ_CLAREOU = 7000 
-LUZ_ANOITECEU = 6000   
+LUZ_ANOITECEU = 6000  
 
 # ==========================================
 # 2. MAPEAMENTO DE HARDWARE (PINOUT)
@@ -254,7 +254,7 @@ def conecta_mqtt():
     client.subscribe(TOPICO_CMD_ALARME)
     return client
 
-# Configuração da leitura serial não bloqueante
+# Configuração da leitura serial
 poll_obj = select.poll()
 poll_obj.register(sys.stdin, select.POLLIN)
 
@@ -279,7 +279,7 @@ pir_disparado = False
 INTERVALO_DHT = 2000     
 INTERVALO_OLED = 1000    
 INTERVALO_MQTT = 1500    
-INTERVALO_SHEETS = 300000  
+INTERVALO_SHEETS = 10000  
 
 print("Sistema Casa Inteligente Iniciado!")
 
@@ -309,11 +309,11 @@ while True:
         # --- LÓGICA DO SENSOR DE LUMINOSIDADE (LDR) ---
         if not modo_manual_luz:
             if leitura_luz <= LUZ_ANOITECEU:
+                if estado_luz:
+                    set_luz(False)  
+            elif leitura_luz >= LUZ_CLAREOU: 
                 if not estado_luz:
                     set_luz(True)  
-            elif leitura_luz >= LUZ_CLAREOU: 
-                if estado_luz:
-                    set_luz(False)
 
         # --- LÓGICA DO SENSOR DE MOVIMENTO (PIR) ---
         if movimento == 1:
