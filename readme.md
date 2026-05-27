@@ -25,3 +25,10 @@ Antes de rodar a aplicação, instale os pacotes necessários no terminal do pro
 
 ```bash
 pip install flask pyserial mpremote
+```
+
+## Planilha Google Sheets
+
+Basta acessar esse link para ver os dados:
+[Planilha Sheets](https://docs.google.com/spreadsheets/d/108ht_MgH2GEunFe-aZAeJgLV0JouBHauBTA3w-we9-s/edit?usp=sharing)
+
