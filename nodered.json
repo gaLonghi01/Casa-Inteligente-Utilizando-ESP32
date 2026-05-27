@@ -1,0 +1,708 @@
+[
+    {
+        "id": "f4ed8cb80d1bbf14",
+        "type": "tab",
+        "label": "Fluxo 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "204ab7fdc2ef672f",
+        "type": "tab",
+        "label": "Fluxo 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "bbb061c748ea6278",
+        "type": "mqtt-broker",
+        "name": "HiveMQ",
+        "broker": "85ea2ff2ae304602975571fd5ae2e49d.s1.eu.hivemq.cloud",
+        "port": "8883",
+        "tls": "",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "7d1f582775136283",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "c1c540f48d4045fa",
+        "type": "ui_tab",
+        "name": "Tab 1",
+        "icon": "dashboard",
+        "order": 1
+    },
+    {
+        "id": "c0502e09a7fcefa5",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "c1c540f48d4045fa",
+        "order": 1,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "3c91bad4a854a901",
+        "type": "ui_spacer",
+        "z": "f4ed8cb80d1bbf14",
+        "name": "spacer",
+        "group": "c0502e09a7fcefa5",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "65ea6be03a224210",
+        "type": "ui_tab",
+        "name": "Casa Inteligente",
+        "icon": "home",
+        "order": 1
+    },
+    {
+        "id": "624f9927b0cbbcdd",
+        "type": "ui_group",
+        "name": "Sensores (Tempo Real)",
+        "tab": "65ea6be03a224210",
+        "order": 1,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "7476bb305104657c",
+        "type": "ui_group",
+        "name": "Status do Sistema",
+        "tab": "65ea6be03a224210",
+        "order": 2,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "f45c0af389ab9323",
+        "type": "ui_group",
+        "name": "Controle Manual",
+        "tab": "65ea6be03a224210",
+        "order": 3,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "e3b0b8dc2cac94d2",
+        "type": "mqtt in",
+        "z": "f4ed8cb80d1bbf14",
+        "name": "Recebe Telemetria",
+        "topic": "casa/telemetria",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "bbb061c748ea6278",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 260,
+        "wires": [
+            [
+                "bcfbe00ca7e66a39"
+            ]
+        ]
+    },
+    {
+        "id": "bcfbe00ca7e66a39",
+        "type": "function",
+        "z": "f4ed8cb80d1bbf14",
+        "name": "Distribui Dados",
+        "func": "var p = msg.payload;\n\nreturn [\n    {payload: p.temperatura},\n    {payload: p.umidade},\n    {payload: p.gas},\n    {payload: p.luminosidade},\n    {payload: p.movimento == 1 ? \"DETECTADO\" : \"Sem Movimento\"},\n    {payload: p.status_luz ? \"LIGADA\" : \"DESLIGADA\"},\n    {payload: p.status_exaustor ? \"LIGADO\" : \"DESLIGADO\"},\n    {payload: p.status_janela ? \"ABERTA\" : \"FECHADA\"},\n    {payload: p.status_alarme ? \"TOCANDO!\" : \"Silencioso\"},\n    {payload: p.status_incendio ? \"PERIGO!\" : \"Seguro\"}\n];",
+        "outputs": 10,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 260,
+        "wires": [
+            [
+                "7392de4335bb9bc7"
+            ],
+            [
+                "ea5d9c2a4a93fbea"
+            ],
+            [
+                "3ae24a888b312008"
+            ],
+            [
+                "54b6363af9eca39e"
+            ],
+            [
+                "03b76f25b81292dc"
+            ],
+            [
+                "70a88e476457e30e"
+            ],
+            [
+                "c17bfe7135d26786"
+            ],
+            [
+                "945d1552a0b77bee"
+            ],
+            [
+                "0f745e403e1d6eba"
+            ],
+            [
+                "625f849d88a8db07"
+            ]
+        ]
+    },
+    {
+        "id": "7392de4335bb9bc7",
+        "type": "ui_gauge",
+        "z": "f4ed8cb80d1bbf14",
+        "name": "",
+        "group": "624f9927b0cbbcdd",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperatura",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "60",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "30",
+        "seg2": "45",
+        "className": "",
+        "x": 750,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "ea5d9c2a4a93fbea",
+        "type": "ui_gauge",
+        "z": "f4ed8cb80d1bbf14",
+        "name": "",
+        "group": "624f9927b0cbbcdd",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Umidade",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#ca3838",
+            "#00b500",
+            "#00b500"
+        ],
+        "seg1": "20",
+        "seg2": "40",
+        "className": "",
+        "x": 740,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "3ae24a888b312008",
+        "type": "ui_gauge",
+        "z": "f4ed8cb80d1bbf14",
+        "name": "",
+        "group": "624f9927b0cbbcdd",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Nível de Gás",
+        "label": "ADC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "4095",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "1500",
+        "seg2": "3000",
+        "diff": false,
+        "className": "",
+        "x": 750,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "54b6363af9eca39e",
+        "type": "ui_gauge",
+        "z": "f4ed8cb80d1bbf14",
+        "name": "",
+        "group": "624f9927b0cbbcdd",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Luminosidade",
+        "label": "ADC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "4095",
+        "colors": [
+            "#ca3838",
+            "#e6e600",
+            "#00b500"
+        ],
+        "seg1": "6000",
+        "seg2": "7000",
+        "diff": false,
+        "className": "",
+        "x": 750,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "03b76f25b81292dc",
+        "type": "ui_text",
+        "z": "f4ed8cb80d1bbf14",
+        "group": "7476bb305104657c",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Movimento:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 750,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "70a88e476457e30e",
+        "type": "ui_text",
+        "z": "f4ed8cb80d1bbf14",
+        "group": "7476bb305104657c",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Luz:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 730,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "c17bfe7135d26786",
+        "type": "ui_text",
+        "z": "f4ed8cb80d1bbf14",
+        "group": "7476bb305104657c",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Exaustor:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 740,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "945d1552a0b77bee",
+        "type": "ui_text",
+        "z": "f4ed8cb80d1bbf14",
+        "group": "7476bb305104657c",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Janela:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 740,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "0f745e403e1d6eba",
+        "type": "ui_text",
+        "z": "f4ed8cb80d1bbf14",
+        "group": "7476bb305104657c",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Alarme:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 740,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "625f849d88a8db07",
+        "type": "ui_text",
+        "z": "f4ed8cb80d1bbf14",
+        "group": "7476bb305104657c",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Risco de Incêndio:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 770,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "c592a915f5219664",
+        "type": "ui_button",
+        "z": "f4ed8cb80d1bbf14",
+        "name": "",
+        "group": "f45c0af389ab9323",
+        "order": 1,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "Ligar Luz",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "#4CAF50",
+        "className": "",
+        "icon": "",
+        "payload": "ON",
+        "payloadType": "str",
+        "topic": "casa/cmd/luz",
+        "topicType": "str",
+        "x": 400,
+        "y": 940,
+        "wires": [
+            [
+                "1d9cc79b053c6f53"
+            ]
+        ]
+    },
+    {
+        "id": "292413b4514e3dfe",
+        "type": "ui_button",
+        "z": "f4ed8cb80d1bbf14",
+        "name": "",
+        "group": "f45c0af389ab9323",
+        "order": 2,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "Desligar Luz",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "#555555",
+        "className": "",
+        "icon": "",
+        "payload": "OFF",
+        "payloadType": "str",
+        "topic": "casa/cmd/luz",
+        "topicType": "str",
+        "x": 410,
+        "y": 980,
+        "wires": [
+            [
+                "1d9cc79b053c6f53"
+            ]
+        ]
+    },
+    {
+        "id": "6e0ad29ee9593c54",
+        "type": "ui_button",
+        "z": "f4ed8cb80d1bbf14",
+        "name": "",
+        "group": "f45c0af389ab9323",
+        "order": 3,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "Ligar Exaustor",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "#4CAF50",
+        "className": "",
+        "icon": "",
+        "payload": "ON",
+        "payloadType": "str",
+        "topic": "casa/cmd/exaustor",
+        "topicType": "str",
+        "x": 420,
+        "y": 1020,
+        "wires": [
+            [
+                "1d9cc79b053c6f53"
+            ]
+        ]
+    },
+    {
+        "id": "15b6398e0d9c6df4",
+        "type": "ui_button",
+        "z": "f4ed8cb80d1bbf14",
+        "name": "",
+        "group": "f45c0af389ab9323",
+        "order": 4,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "Desligar Exaustor",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "#555555",
+        "className": "",
+        "icon": "",
+        "payload": "OFF",
+        "payloadType": "str",
+        "topic": "casa/cmd/exaustor",
+        "topicType": "str",
+        "x": 430,
+        "y": 1060,
+        "wires": [
+            [
+                "1d9cc79b053c6f53"
+            ]
+        ]
+    },
+    {
+        "id": "4260a5d11a804792",
+        "type": "ui_button",
+        "z": "f4ed8cb80d1bbf14",
+        "name": "",
+        "group": "f45c0af389ab9323",
+        "order": 5,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "Abrir Janela",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "#4CAF50",
+        "className": "",
+        "icon": "",
+        "payload": "ON",
+        "payloadType": "str",
+        "topic": "casa/cmd/janela",
+        "topicType": "str",
+        "x": 410,
+        "y": 1100,
+        "wires": [
+            [
+                "1d9cc79b053c6f53"
+            ]
+        ]
+    },
+    {
+        "id": "d64c81828263d473",
+        "type": "ui_button",
+        "z": "f4ed8cb80d1bbf14",
+        "name": "",
+        "group": "f45c0af389ab9323",
+        "order": 6,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "Fechar Janela",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "#555555",
+        "className": "",
+        "icon": "",
+        "payload": "OFF",
+        "payloadType": "str",
+        "topic": "casa/cmd/janela",
+        "topicType": "str",
+        "x": 410,
+        "y": 1140,
+        "wires": [
+            [
+                "1d9cc79b053c6f53"
+            ]
+        ]
+    },
+    {
+        "id": "3d7bbdfc1d09c3a0",
+        "type": "ui_button",
+        "z": "f4ed8cb80d1bbf14",
+        "name": "",
+        "group": "f45c0af389ab9323",
+        "order": 7,
+        "width": 6,
+        "height": 1,
+        "passthru": false,
+        "label": "Silenciar Alarme",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "#f44336",
+        "className": "",
+        "icon": "",
+        "payload": "OFF",
+        "payloadType": "str",
+        "topic": "casa/cmd/alarme",
+        "topicType": "str",
+        "x": 420,
+        "y": 1180,
+        "wires": [
+            [
+                "1d9cc79b053c6f53"
+            ]
+        ]
+    },
+    {
+        "id": "1d9cc79b053c6f53",
+        "type": "mqtt out",
+        "z": "f4ed8cb80d1bbf14",
+        "name": "Envia Comandos",
+        "topic": "",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "bbb061c748ea6278",
+        "x": 730,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "d68d1ff2b1bb8723",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-dashboard": "3.6.6"
+        }
+    }
+]
